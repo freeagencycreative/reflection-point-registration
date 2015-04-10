@@ -22,24 +22,20 @@
 	<div id="intro" class="section" style="background-image:url(./assets/osoyoos.png);">
 		<div class="inner widow-fix">
 			<img src="./assets/RP-wordmark-white.svg">
-			<p class="mobile-show"><span class="circle"></span></p>
 			<p><em>a</em> private reserve <em>of</em> 30 lots <em>in a</em> waterfront community</p>
 			<p>coming 2015 <em>in</em> Osoyoos</p>
-			<p class="mobile-show"><span class="line"></span></p>
-			<a id="register-button" class="button">
-				Register
-			</a>
 		</div>
+		<a href="#register-now" id="register-button" class="button">
+			<span>Register</span>
+		</a>
 		<div class="opacity"></div>
 	</div>
 
 	<div class="section alt" style="background-image:url(./assets/texture.png);">
 		<div class="inner widow-fix">
-			<p class="mobile-show"><span class="circle"></span></p>
 			<p><em>to the</em> very best <em>of the</em> Okanagan:</p>
 			<p><em>to sun-drenched</em> merlot vineyards, <em>the</em> dry heat <em>on</em> desert sagebush</p>
 			<p><em>a</em> July harvest <em>of</em> ranier cherries, stargazing <em>under the</em> first moon <em>of</em> autumn</p>
-			<p class="mobile-show"><span class="line"></span></p>
 		</div>
 		<div class="opacity"></div>
 	</div>
@@ -66,20 +62,18 @@
 			<br />
 			<img id="logo" src="./assets/RP-logo-white.svg">
 			<div class="mobile-hide">
-				<p><span class="line"></span></p>
 				<p><em>sales centre</em> 205-6360 202nd Street, Langley BC, V2Y 1N2</p>
-				<p><em>phone</em> 604 532 6060 | <em>fax</em> 604 532 1120 | <em>email</em> info@infinitygrp.ca</p>
+				<p><em>phone</em> 604 532 6060 | <em>fax</em> 604 532 1120 | <em>email</em> <a href="mailto:info@infinitygrp.ca" target="_blank">info@infinitygrp.ca</a></p>
 				<p><small>copyright 2015 &copy; infinity properties ltd.</small></p>
 			</div>
 			<div class="mobile-show">
-				<p class="mobile-show"><span class="circle"></span></p>
 				<p>
 					<em>sales centre</em>
 					<br />205-6360 202nd Street
 					<br />Langley BC, V2Y 1N2
 					<br /><em>phone</em> 604 532 6060
 					<br /><em>fax</em> 604 532 1120
-					<br /><em>email</em> info@infinitygrp.ca
+					<br /><em>email</em> <a href="mailto:info@infinitygrp.ca" target="_blank">info@infinitygrp.ca</a>
 				</p>
 				<p class="mobile-show"><span class="line"></span></p>
 				<p><small>copyright 2015 &copy; infinity properties ltd.</small></p>
@@ -95,7 +89,7 @@
 
 		var windowHeight = $(window).height();
 		var newWindowHeight = windowHeight * 0.65;
-		$('#intro').css('height', newWindowHeight+'px');
+		$('#intro').css('height', windowHeight+'px');
 
 		// Fix for header logo and corner bit to center
 		var windowWidth = $('body').width();
@@ -104,6 +98,20 @@
 		var logoWidth = $('#header #logo img').width();
 		var offsetLogo = (windowWidth - logoWidth) / 2;
 		$('#header #logo img').css('left', offsetLogo+'px');
+
+		//Smooth scroll
+		jQuery('a[href*=#]:not([href=#])').click(function() {
+		  if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+		    var target = jQuery(this.hash);
+		    target = target.length ? target : jQuery('[name=' + this.hash.slice(1) +']');
+		    if (target.length) {
+		      jQuery('html,body').animate({
+		        scrollTop: target.offset().top
+		      }, 1000);
+		      return false;
+		    } 
+		  }
+		});
 	});
 </script>
 </html>
