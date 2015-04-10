@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Reflection Point</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="./js/jquery.widowFix-1.3.2.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="styles.css" />
+
+</head>
+
+<body>
+
+	<div id="header">
+		<div id="logo">
+			<img src="./assets/RP-logo.svg">
+		</div>
+	</div>
+	<div class="corner"></div>
+
+	<div id="intro" class="section" style="background-image:url(./assets/osoyoos.png);">
+		<div class="inner widow-fix">
+			<img src="./assets/RP-wordmark-white.svg">
+			<p class="mobile-show"><span class="circle"></span></p>
+			<p><em>a</em> private reserve <em>of</em> 30 lots <em>in a</em> waterfront community</p>
+			<p>coming 2015 <em>in</em> Osoyoos</p>
+			<p class="mobile-show"><span class="line"></span></p>
+			<a id="register-button" class="button">
+				Register
+			</a>
+		</div>
+		<div class="opacity"></div>
+	</div>
+
+	<div class="section alt" style="background-image:url(./assets/texture.png);">
+		<div class="inner widow-fix">
+			<p class="mobile-show"><span class="circle"></span></p>
+			<p><em>to the</em> very best <em>of the</em> Okanagan:</p>
+			<p><em>to sun-drenched</em> merlot vineyards, <em>the</em> dry heat <em>on</em> desert sagebush</p>
+			<p><em>a</em> July harvest <em>of</em> ranier cherries, stargazing <em>under the</em> first moon <em>of</em> autumn</p>
+			<p class="mobile-show"><span class="line"></span></p>
+		</div>
+		<div class="opacity"></div>
+	</div>
+
+	<div class="section mobile-hide">
+		<div class="inner">
+			<p><em>build your</em> dream home, lots <em>starting at</em> $500,000</p>
+		</div>
+	</div>
+
+	<div id="register-now" class="section" style="background-image:url(./assets/run.png);">
+		<div class="inner">
+			<h1>Register Now</h1>
+			<form style="height: 400px;">
+
+			</form>
+		</div>
+		<div class="opacity"></div>
+	</div>
+
+	<div id="footer" class="section">
+		<div class="inner">
+			<img id="wordmark" src="./assets/RP-wordmark-white.svg">
+			<br />
+			<img id="logo" src="./assets/RP-logo-white.svg">
+			<div class="mobile-hide">
+				<p><span class="line"></span></p>
+				<p><em>sales centre</em> 205-6360 202nd Street, Langley BC, V2Y 1N2</p>
+				<p><em>phone</em> 604 532 6060 | <em>fax</em> 604 532 1120 | <em>email</em> info@infinitygrp.ca</p>
+				<p><small>copyright 2015 &copy; infinity properties ltd.</small></p>
+			</div>
+			<div class="mobile-show">
+				<p class="mobile-show"><span class="circle"></span></p>
+				<p>
+					<em>sales centre</em>
+					<br />205-6360 202nd Street
+					<br />Langley BC, V2Y 1N2
+					<br /><em>phone</em> 604 532 6060
+					<br /><em>fax</em> 604 532 1120
+					<br /><em>email</em> info@infinitygrp.ca
+				</p>
+				<p class="mobile-show"><span class="line"></span></p>
+				<p><small>copyright 2015 &copy; infinity properties ltd.</small></p>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('.widow-fix *').widowFix();
+
+		var windowHeight = $(window).height();
+		var newWindowHeight = windowHeight * 0.65;
+		$('#intro').css('height', newWindowHeight+'px');
+
+		// Fix for header logo and corner bit to center
+		var windowWidth = $('body').width();
+		var offsetCorner = (windowWidth - 50) / 2;
+		$('.corner').css('left', offsetCorner+'px');
+		var logoWidth = $('#header #logo img').width();
+		var offsetLogo = (windowWidth - logoWidth) / 2;
+		$('#header #logo img').css('left', offsetLogo+'px');
+	});
+</script>
+</html>
