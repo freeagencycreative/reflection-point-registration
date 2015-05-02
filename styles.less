@@ -1,5 +1,4 @@
 @import url(http://fonts.googleapis.com/css?family=Libre+Baskerville:400italic);
-@import url(http://fonts.googleapis.com/css?family=Raleway:700&subset=all);
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400);
 
 body {
@@ -104,7 +103,7 @@ img {
 }
 
 .opacity {
-	background: #000;
+	background: #3B6583;
 	opacity: 0.4;
 	width: 100%;
 	height: 100%;
@@ -120,7 +119,7 @@ img {
 		color: #FFF;
 		height: 30px;
 		&:hover {
-			opacity: 0.6;
+			opacity: 0.9;
 			transition: background 0.3s ease-in-out;
 			-moz-transition: background 0.3s ease-in-out;
 			-webkit-transition: background 0.3s ease-in-out;
@@ -137,10 +136,20 @@ img {
 	display: block;
 	overflow: hidden;
 	.inner {
-		padding: 12% 5%;
+		padding: 8% 5%;
 		img {
 			padding-top: 8%;
 			margin-bottom: 3%;
+		}
+	}
+	.phone {
+		position: absolute;
+		width: 100%;
+		text-align: center;
+		bottom: 20%;
+		z-index: 9;
+		* {
+			color: #FFF;
 		}
 	}
 	.button {
@@ -153,10 +162,170 @@ img {
 	}
 }
 
-#register-now {
+#anchor {
 	padding-top: 80px;
+	padding-bottom: 35px;
+}
+
+#register-now {
+	padding-top: 35px;
+	padding-bottom: 60px;
 	.opacity {
-		background: #0378C4;
+		background: #10BAF7;
+	}
+	form {
+		width: 100%;
+		* {
+			font-family: 'Montserrat' !important;
+			letter-spacing: 1px;
+			font-weight: 400;
+			width: 100%;
+			font-size: 100% !important;
+		}
+		table {
+			background-color: transparent !important;
+			tbody {
+				display: block;
+				overflow: hidden;
+				tr:first-of-type {
+					display: none;
+				}
+				tr {
+					margin-top: 2%;
+					display: block;
+				}
+				td {
+					display: inline-block;
+					width: 100% !important;
+					padding: 0;
+					margin: 0;
+					position: relative;
+					white-space: normal;
+					line-height: initial;
+					span {
+						color: #FFF !important;
+					}
+					input,
+					textarea {
+						color: #000 !important;
+					}
+					input[type=text], 
+					textarea,
+					select, select option {
+						width: 100% !important;
+						padding: 1% 10px;
+						font-size: 1rem !important;
+						font-weight: 200 !important;
+						border: 0 !important;
+						opacity: 0.7 !important;
+						text-transform: uppercase;
+						margin: 5px auto !important;
+						&:focus {
+							outline: none;
+							opacity: 0.9 !important;
+						}
+					}
+					textarea {
+						min-height: 180px;
+					}
+					input[type=checkbox] {
+						appearance: none;
+						-webkit-appearance: none;
+						-moz-appearance: none;
+						background-color: #fafafa;
+						border: 0;
+						border-radius: 0;
+						margin-top: 10px;
+						margin-left: 0;
+						display: inline-block;
+						position: relative;
+						height: 28px;
+						width: 28px !important;
+						opacity: 0.7;
+						&:focus {
+							outline: none;
+							opacity: 0.9 !important;
+						}
+						&:checked {
+							box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+						}
+						&:checked:after {
+							font-family: 'Montserrat' !important;
+							content: '\2714';
+							font-size: 16px;
+							padding: 5px;
+							position: absolute;
+							left: 2px;
+							top: 0;
+							color: #333;
+						}
+					}
+					.realtor {
+						position: absolute;
+						left: 40px;
+						height: 30px;
+						line-height: 50px;
+					}
+					select {
+						appearance: none;
+						-webkit-appearance: none;
+						-webkit-border-radius: 0px;
+						width: 100% !important;
+						color: #333 !important;
+						@-moz-document url-prefix() {
+						   select[name="Lead Source"] {
+						   	padding: 2px 10px !important;
+						   }
+						}
+						option {
+							padding: 5px !important;
+							margin: 0 !important;
+							color: #333 !important;
+						}
+					}
+					.select-caret {
+						background: transparent;
+						position: absolute;
+						bottom: 20px;
+						right: 10px;
+						width: 0; 
+						height: 0; 
+						border-left: 6px solid transparent;
+						border-right: 6px solid transparent;
+						border-top: 6px solid #333;
+					}
+					.required-note {
+						font-family: 'Libre Baskerville' !important;
+						font-style: italic;
+						text-transform: none;
+					}
+					input[type=submit] {
+						border: 1px solid #FFF;
+						padding: 8px 40px;
+						letter-spacing: 3px;
+						color: #FFF;
+						height: 35px;
+						color: #FFF !important;
+						text-transform: uppercase;
+						line-height: 1rem;
+						background: transparent !important;
+						width: initial !important;
+						&:hover {
+							opacity: 0.6;
+							transition: background 0.3s ease-in-out;
+							-moz-transition: background 0.3s ease-in-out;
+							-webkit-transition: background 0.3s ease-in-out;
+							background: #FFF !important;
+							color: #333 !important;
+							cursor: pointer;
+						}
+					}
+					input[type=reset] {
+						display: none;
+					}
+				}
+			}
+		}
 	}
 }
 
@@ -210,16 +379,26 @@ img {
 	#intro {
 		.inner {
 			margin-top: 100px;
+			.phone {
+				font-size: 1.5rem !important;
+			}
 		}
 	}
 	.section {
 		.inner {
-			padding: 10% !important;
+			padding: 5% !important;
 		}
 	}
 	#register-now {
-		h1 {
-			font-size: 1.5rem !important;
+		h2 {
+			font-size: 1rem !important;
+			padding: 0;
+			margin: 0 auto -30px;
+		}
+		input[type=checkbox] {
+			&:checked:after {
+				padding: 0 5px !important;
+			}
 		}
 	}
 	#footer {

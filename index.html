@@ -4,7 +4,7 @@
 	<title>Reflection Point</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="./js/jquery.widowFix-1.3.2.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="styles.css" />
 
@@ -14,7 +14,7 @@
 
 	<div id="header">
 		<div id="logo">
-			<img src="./assets/RP-logo.svg">
+			<a href="./"><img src="./assets/RP-logo.svg"></a>
 		</div>
 	</div>
 	<div class="corner"></div>
@@ -25,13 +25,16 @@
 			<p><em>a</em> private reserve <em>of</em> 30 lots <em>in a</em> waterfront community</p>
 			<p>coming 2015 <em>in</em> Osoyoos</p>
 		</div>
-		<a href="#register-now" id="register-button" class="button">
+		<a class="phone" href="tel:+6045326060">
+			<h2>604 532 6060</h2>
+		</a>
+		<a href="#anchor" id="register-button" class="button">
 			<span>Register</span>
 		</a>
 		<div class="opacity"></div>
 	</div>
 
-	<div class="section alt" style="background-image:url(./assets/texture.png);">
+	<div id="anchor" class="section alt" style="background-image:url(./assets/texture.png);">
 		<div class="inner widow-fix">
 			<p><em>to the</em> very best <em>of the</em> Okanagan:</p>
 			<p><em>to sun-drenched</em> merlot vineyards, <em>the</em> dry heat <em>on</em> desert sagebush</p>
@@ -48,10 +51,10 @@
 
 	<div id="register-now" class="section" style="background-image:url(./assets/run.png);">
 		<div class="inner">
-			<h1>Register Now</h1>
-			<form style="height: 400px;">
+			<h2>Register Now</h2>
 
-			</form>
+			<script src='https://crm.zoho.com/crm/WebFormServeServlet?rid=ae354d8e4e850d0b72f5b95abb6a613b3fc51241a21342c2e93046e7be934706gid115f0d1cdf9b48a89f2e0fa092022fe85ffe3294637794a2bde2b9decdafacef&script=$sYG'></script>
+
 		</div>
 		<div class="opacity"></div>
 	</div>
@@ -114,6 +117,14 @@
 		    } 
 		  }
 		});
+
+		//Zoho Reg form
+		var innerWidth = $('#register-now form').width();
+		$('#register-now table').css('width', innerWidth+'px');
+		$('#register-now table *').css('width', innerWidth+'px');
+		$('#register-now form select').after('<span class="select-caret"></span>');
+		$('#register-now form input[type=checkbox]').after('<span class="realtor">Yes</span>');
+		$('#register-now form textarea').after('<span class="required-note">* Required field</span>');
 
 	});
 </script>
